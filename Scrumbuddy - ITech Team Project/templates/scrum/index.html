@@ -1,0 +1,39 @@
+{% extends 'scrum/base.html' %}
+{% load staticfiles %}
+
+{% block body_block %}		
+
+<br><br>
+
+ <div class="row">	
+	{% if user.is_authenticated %}
+	<div class="col-sm-6">
+		<div class="panel panel-primary" style="background-color: #ffd1b3">
+	    <div class="panel-heading" align="center" style="background-color:#ffb380"><font color="black"><p style="font-size:30px"><b  id="mytitle"> Welcome to Scrum Project </b></p></font></div>
+		<br>
+		<p style="font-size:25px"><b>&nbsp&nbsp&nbspScrum Project essentials : </b></p>
+		
+		<ul>
+			<li><p style="font-size:20px"><i class="glyphicon glyphicon-chevron-right"></i> <a href="{% url 'project' %}">Manage Projects</a></p></li>
+			<li><p style="font-size:20px"><i class="glyphicon glyphicon-chevron-right"></i> <a href="{% url 'board' 0%}">Work on User Stories</a></p></li>
+			<li><p style="font-size:20px"><i class="glyphicon glyphicon-chevron-right"></i> <a href="{% url 'sprint' 0%}">Manage Sprints</a></p></li>
+			<li><p style="font-size:20px"><i class="glyphicon glyphicon-chevron-right"></i> <a href="{% url 'backlog' 0%}">Monitor Backlog</a></p></li>
+		</ul>
+		<br><br><br>
+		</div>
+	</div>
+	
+	<div class="col-sm-6">	
+		<div align="center"><img style="width:90%" src="{% static "images/Untitled.png" %}"/></div>
+	</div>
+	{% else %}
+		<div class="col-sm-12">	
+		<div align="center"><img style="width:70%" src="{% static "images/Agile.png" %}"/></div>
+	</div>
+	{% endif %}
+
+
+
+{% endblock %}
+
+
